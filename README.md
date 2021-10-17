@@ -1,7 +1,6 @@
 # Attendance-Report-and-Analytics
 
 The basic approach of the project will be to read and write the student data from and to a csv file made along side the project.
-Make sure to have python 3.X installed on your machine before proceeding.
 
 # Installation
 
