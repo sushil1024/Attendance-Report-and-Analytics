@@ -1,6 +1,6 @@
 # Attendance-Report-and-Analytics
 
-The basic approach of the project will be to read and write the student data from and to a csv file made along side the project.
+Data will be stored in csv format, report will be generated on request and analysis will be showed in the report.
 
 # Installation
 
