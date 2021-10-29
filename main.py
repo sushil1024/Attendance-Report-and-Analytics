@@ -12,5 +12,5 @@ async def something(request: Request):
 
 
 @app.post("/inputs")
-async def inputdata():
+async def inputdata(request: Request):
     return templates.TemplateResponse("input.html")

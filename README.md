@@ -1,6 +1,6 @@
 # Attendance-Report-and-Analytics
 
-Data will be stored in csv format, report will be generated on request and analysis will be showed in the report.
+Data will be stored in csv format, report will be generated on request and analysis will be showed in the report. The report will be mailed to the particular email id of the candidate.
 
 # Installation
 
