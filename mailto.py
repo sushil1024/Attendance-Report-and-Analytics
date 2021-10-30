@@ -2,7 +2,7 @@
 import yagmail
 
 
-def sendmail(emailid):
+def sendmail(emailid, stuname):
     # credentials of sender
     yag = yagmail.SMTP("sushilwaghmaresmtp@gmail.com", "somepassword*&#@$$$$")
 
@@ -11,7 +11,5 @@ def sendmail(emailid):
         to=emailid,
         subject="Attendance Report",
         contents="Attendance Report is as follows",
-        attachments="reportfolder/report.pdf",
+        attachments=f"reportfolder/Attendance Report - {stuname}.pdf",
     )
-
-

@@ -7,6 +7,7 @@ def genpdf(stuname, rollno, dob, age, gender, residence, lecs):
     msg2 = ""
     if lecs < 60/3:
         leclost = 60/3 - lecs
+        leclost = int(leclost)
         leclost = str(leclost)
         msg = "Student is in defaulter's list."
         msg2 = "Student needed to attend " + leclost + " more lectures to be out of defaulter's list."
@@ -42,9 +43,13 @@ def genpdf(stuname, rollno, dob, age, gender, residence, lecs):
     pdf.cell(40, 10, "Lectures Attended: " + lecs + " out of 60")
     pdf.ln()
     pdf.set_font("Courier", size=12)
-    pdf.set_text_color(0, 0, 255)
+    pdf.set_text_color(255, 0, 0)
     pdf.cell(40, 10, msg)
     pdf.ln()
     pdf.cell(40, 10, msg2)
 
-    pdf.output("reportfolder/report.pdf")
+    from genchart import makechart
+    makechart(lecs, stuname)
+    pdf.image(f"piecharts/chart - {stuname}.png", 0, 130)
+
+    pdf.output(f"reportfolder/Attendance Report - {stuname}.pdf")
