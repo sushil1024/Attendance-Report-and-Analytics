@@ -4,7 +4,7 @@ from fpdf import FPDF
 def genpdf(stuname, rollno, dob, age, gender, residence, lecs):
 
     lecs = int(lecs)
-    msg2 = None
+    msg2 = ""
     if lecs < 60/3:
         leclost = 60/3 - lecs
         leclost = str(leclost)
