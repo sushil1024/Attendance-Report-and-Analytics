@@ -39,8 +39,8 @@ if roll is not None:
             from genreport import genpdf
             genpdf(studentName, roll, dob, age, gender, residence, lecs)
 
-            # from mailto import sendmail
-            # out1 = sendmail(emailid, studentName)
+            from mailto import sendmail
+            out1 = sendmail(emailid, studentName)
             print(f"Report sent to " + "'" + emailid + "'")
 
         else:
