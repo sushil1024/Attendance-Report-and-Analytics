@@ -1,7 +1,6 @@
 from fpdf import FPDF
 
 
-# I have made some changes and pushed it
 def genpdf(stuname, rollno, dob, age, gender, residence, lecs):
 
     lecs = int(lecs)
