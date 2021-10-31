@@ -3,7 +3,9 @@ import pandas as pd
 # opening file
 file = pd.read_csv('records.csv')
 
-# accepting roll number
+
+# def inputroll(roll):
+    # accepting roll number
 roll = int(input("Enter roll no to search: "))
 if roll is not None:
     try:

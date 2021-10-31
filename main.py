@@ -1,27 +1,22 @@
-from fastapi import FastAPI, Request, File, UploadFile, Form
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
+from flask import Flask, render_template
+
+app = Flask(__name__)
 
 
-app = FastAPI()
-templates = Jinja2Templates(directory="templates/")
+@app.route("/", methods=['GET', 'POST'])
+def home():
+    return render_template("home.html")
 
 
-@app.get("/")
-async def something(request: Request):
-    return templates.TemplateResponse("home.html", {"request": request})
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    return render_template("login.html")
 
 
-@app.post("/login/{username}")
-def authent(username: str, password: str):
-    if username == "root" and password == "root":
-        return "Access Granted"
-
-        @app.post("/inputs")
-        async def inputdata(request: Request, rollno: int):
-            return templates.TemplateResponse("input.html", {"request": Request, "StudentRollNo": rollno})
-
-    else:
-        return "Inavlid Credentials"
+@app.route("/inputs", methods=['GET', 'POST'])
+def input():
+    return render_template("input.html")
 
 
+if __name__ == "__main__":
+    app.run(debug=True)

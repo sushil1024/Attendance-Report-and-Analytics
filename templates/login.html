@@ -16,19 +16,30 @@
         <p>Please fill in your credentials to login.</p>
 
 
-        <form action="/login" method="post">
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" required>
-            </div>    
+        <form action="/login" method="POST" >
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" required>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" class="btn btn-primary" value="Login" onclick="return check(this.form)">
             </div>
         </form>
+        <script language="javascript">
+            function check(form)
+            {
+
+                if(form.password.value == "root")
+                {
+                    return true;
+                }
+                else
+                {
+                    alert("Error: Wrong Password")
+                    return false;
+                }
+            }
+	    </script>
     </div>
 </body>
 </html>

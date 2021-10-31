@@ -6,8 +6,11 @@
 </head>
 <body>
     <form action="/inputs" method="post">
-        Roll Number = <input type="number" name="StudentRollNo"> <br>
-            <input type="submit" name="Submit">
+        <br>
+        Roll Number = <input type="number" name="StudentRollNo"> <br><br>
+        <input type="checkbox" id="email" name="email" value="Bike">
+        <label for="email"> Email me the report</label><br><br>
+        <input type="submit" name="Submit" value="Submit" onclick="<% from searchdata import inputroll %> <% inputroll(StudentRollNo) %>">
     </form>
 </body>
 </html>
