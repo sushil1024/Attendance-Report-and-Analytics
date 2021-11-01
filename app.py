@@ -25,5 +25,10 @@ def inputs():
     return render_template("input.html")
 
 
+@app.route("/result", methods=['POST'])
+def resultroll():
+    return render_template("result.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
