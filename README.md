@@ -13,6 +13,12 @@ git clone https://github.com/sushil1024/Attendance-Report-and-Analytics
 
 
 # Requirements
+Flask==2.0.2
+fpdf==1.7.2
+fpdf2==2.4.5
+matplotlib==3.4.3
+pandas==1.3.4
+yagmail==0.14.260
 
 # Contributions
 Sushil Sunil Waghmare
