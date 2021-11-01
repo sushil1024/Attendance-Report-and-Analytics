@@ -12,6 +12,3 @@ def makechart(lecs, stuname):
     plt.pie(data, labels=attendance)
 
     plt.savefig(f"piecharts/chart - {stuname}.png")
-
-
-# makechart(54, "sushil")

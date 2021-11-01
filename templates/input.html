@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Give data</title>
-</head>
 <body>
-    <form action="/result" method="post">
+    <form action="/inputs" method="post">
         <br>
-        Roll Number = <input type="number" name="studentrollno"> <br><br>
-        <input type="checkbox" id="email" name="email">
-        <label for="email"> Email me the report</label><br><br>
-        <input type="submit" name="Submit" value="Submit" onclick="result.html" >
+        Roll Number = <input type="number" name="studentrollno" required> <br><br>
+        Email the data(y/n) = <input type="text" name="mailch"> <br><br>
+        <input type="submit" name="Submit" value="Submit" >
+        <a href="/results">Show data</a><br><br>
     </form>
 </body>
 </html>

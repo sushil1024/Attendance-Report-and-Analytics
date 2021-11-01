@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -17,15 +17,18 @@ def login():
 def inputs():
     if request.method == 'POST':
         studentrollno = request.form['studentrollno']
-        email = request.form['email']
+        mailch = request.form['mailch']
 
-        from searchdata import inputroll
-        inputroll(studentrollno)
+        from searchdata import inputnmail
+        if mailch == "":
+            inputnmail(studentrollno, "n")
+        else:
+            inputnmail(studentrollno, mailch)
 
     return render_template("input.html")
 
 
-@app.route("/result", methods=['POST'])
+@app.route("/results")
 def resultroll():
     return render_template("result.html")
 
