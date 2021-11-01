@@ -5,41 +5,48 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        body{
+            font: 14px sans-serif;
+            text-align: center;
+         }
+        .wrapper{
+            width: 360px; padding: 20px;
+        }
+        p{ text-align: center; }
+        h1{ text-align: center; }
     </style>
 </head>
 <body>
     <div class="wrapper">
         <p>*Attendance report is protected with username and password authentication.*</p>
-        <h2>Login to gain access</h2>
+        <h1>Login to gain access</h1>
         <p>Please fill in your credentials to login.</p>
 
 
-        <form action="/login" method="POST" >
+        <form action="/inputs" method="get" >
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" required>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login" onclick="return check(this.form)">
+                    <input type="submit" class="btn btn-primary" value="Login" onclick="return check(this.form)">
             </div>
         </form>
-        <script language="javascript">
-            function check(form)
-            {
-
-                if(form.password.value == "root")
-                {
-                    return true;
-                }
-                else
-                {
-                    alert("Error: Wrong Password")
-                    return false;
-                }
-            }
-	    </script>
     </div>
 </body>
 </html>
+<script language="javascript">
+                function check(form)
+                {
+
+                    if(form.password.value == "root")
+                    {
+                        return location.href="input.html";
+                    }
+                    else
+                    {
+                        alert("Error: Wrong Password")
+                        return false;
+                    }
+                }
+</script>
