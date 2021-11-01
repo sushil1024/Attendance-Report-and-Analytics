@@ -34,4 +34,4 @@ def resultroll():
 
 
 if __name__ == "__main__":
-    app.run(host="https://attendance-report-and-analytic.herokuapp.com/", debug=True)
+    app.run(debug=True)
