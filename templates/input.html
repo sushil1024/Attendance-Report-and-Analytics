@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Give data</title>
+    <style>
+        input[type=text], select, textarea {
+            width: 1%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        input[type=number], select, textarea {
+            width: 10%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+    </style>
+</head>
 <body>
-    <form action="/inputs" method="post">
-        <br>
-        Roll Number = <input type="number" name="studentrollno" required> <br><br>
-        Email the data(y/n) = <input type="text" name="mailch"> <br><br>
-        <input type="submit" name="Submit" value="Submit" >
-        <a href="/results">Show data</a><br><br>
-    </form>
+    <center>
+        <form action="/inputs" method="post">
+            <br>
+            Roll Number = <input type="number" name="studentrollno" required> <br><br>
+            Email the data(y/n) = <input type="text" name="mailch"> <br><br>
+            <input type="submit" name="Submit" value="Submit">
+            <a href="/results">Show data</a><br><br>
+            <a href="/">Home</a>
+        </form>
+    </center>
 </body>
+<script>
+    includeHTML("result.html");
+</script>
 </html>

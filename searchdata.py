@@ -11,9 +11,11 @@ def inputnmail(roll, mailch):
             with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'display.width', None):
                 temp = file.loc[[roll - 1]]  # temp variable stores value of the dataframe
                 result = temp.to_html()
+                linktohtml = '<a href="/inputs">Go back</a>'
 
                 with open("templates/result.html", "w") as f:
                     f.write(result)
+                    f.write(linktohtml)
 
             df = pd.read_csv('records.csv')
 
