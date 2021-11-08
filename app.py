@@ -1,14 +1,13 @@
 from flask import Flask, render_template, request
-import sys
+import os
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
-    # from resetresult import deleteres
-    # deleteres()
-    # del sys.modules['resetresult']
+    if os.path.exists("templates/result.html"):
+        os.remove("templates/result.html")
     return render_template("home.html")
 
 
@@ -31,7 +30,11 @@ def inputs():
 
 @app.route("/results")
 def resultstu():
-    return render_template("result.html")
+    if os.path.exists("templates/result.html"):
+        return render_template("result.html")
+
+    else:
+        return "<h1>Details about the candidate will be shown here</h1>"
 
 
 if __name__ == "__main__":
