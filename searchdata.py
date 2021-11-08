@@ -39,9 +39,8 @@ def inputnmail(roll, mailch):
                 genpdf(studentname, roll, dob, age, gender, residence, lecs)
 
                 from mailto import sendmail
-
                 sendmail(emailid, studentname)
 
         except Exception as val:
             print(val)
-            print("This type of value is not found in the data")
+            return '<p>This type of value is not found in the data</p>'

@@ -1,10 +1,14 @@
 from flask import Flask, render_template, request
+import sys
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
+    from resetresult import deleteres
+    deleteres()
+    del sys.modules['resetresult']
     return render_template("home.html")
 
 
@@ -20,10 +24,7 @@ def inputs():
         mailch = request.form['mailch']
 
         from searchdata import inputnmail
-        if mailch == "":
-            inputnmail(studentrollno, "n")
-        else:
-            inputnmail(studentrollno, mailch)
+        inputnmail(studentrollno, mailch)
 
     return render_template("input.html")
 

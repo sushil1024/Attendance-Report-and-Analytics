@@ -22,17 +22,18 @@
 </head>
 <body>
     <center>
-        <form action="/inputs" method="post">
+        <form method="post">
             <br>
-            *Roll Number = <input type="number" name="studentrollno" required> <br><br>
-            Email the data(y/n) = <input type="text" name="mailch"> <br><br>
-            <input type="submit" name="Submit" value="Submit">
-            <a href="/results">View data of given Roll No</a><br><br>
+            Roll Number = <input type="number" name="studentrollno" required> <br><br>
+            Email the data?(y/n) = <input type="text" name="mailch" required> <br><br>
+            <input type="submit" name="Submit" value="Submit" onclick="result.html"/>
+            <a href="/results">View</a>
+            <br><br>
             <a href="/">Home</a>
         </form>
     </center>
     <h1>INSTRUCTIONS:</h1>
-    <p>-The details about "Roll Number" submitted can be viewed by clicking "show data".</p>
+    <p>-The details about "Roll Number" and "Email the data?" submitted can be viewed by clicking on "View".</p>
     <p>-You can apply for email by giving input as 'y'/'n'(Yes/No).</p>
     <p>-After putting roll number and option(y/n) for email, the data for the specific roll number will be sent to Email ID owned by the person with that roll number.</p>
     <p>-The data can then be exported into pdf file and will be sent after clicking submit.</p>
