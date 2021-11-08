@@ -14,6 +14,9 @@ def home():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    from resetresult import deleteres
+    deleteres()
+    del sys.modules['resetresult']
     return render_template("login.html")
 
 
