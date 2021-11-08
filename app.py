@@ -33,7 +33,7 @@ def inputs():
 
 
 @app.route("/results")
-def resultroll():
+def resultstu():
     return render_template("result.html")
 
 
