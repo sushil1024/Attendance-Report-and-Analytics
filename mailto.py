@@ -19,5 +19,3 @@ def sendmail(emailid, stuname):
         os.remove(f"piecharts/chart - {stuname}.png")
     if os.path.exists(f"reportfolder/Attendance Report - {stuname}.pdf"):
         os.remove(f"reportfolder/Attendance Report - {stuname}.pdf")
-    if os.path.exists("templates/result.html"):
-        os.remove("templates/result.html")
