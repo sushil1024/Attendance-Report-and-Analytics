@@ -1,5 +1,6 @@
 # to send email (report)
 import yagmail
+import os
 
 
 def sendmail(emailid, stuname):
@@ -13,3 +14,7 @@ def sendmail(emailid, stuname):
         contents="Attendance Report is as follows",
         attachments=f"reportfolder/Attendance Report - {stuname}.pdf",
     )
+    if os.path.exists(f"piecharts/chart - {stuname}.png"):
+        os.remove(f"piecharts/chart - {stuname}.png")
+    if os.path.exists(f"reportfolder/Attendance Report - {stuname}.pdf"):
+        os.remove(f"reportfolder/Attendance Report - {stuname}.pdf")

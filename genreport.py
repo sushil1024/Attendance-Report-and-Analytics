@@ -3,6 +3,9 @@ from fpdf import FPDF
 
 def genpdf(stuname, rollno, dob, age, gender, residence, lecs):
 
+    from genchart import makechart
+    makechart(lecs, stuname)
+
     lecs = int(lecs)
     msg2 = ""
     if lecs < 60/3:
@@ -48,8 +51,6 @@ def genpdf(stuname, rollno, dob, age, gender, residence, lecs):
     pdf.ln()
     pdf.cell(40, 10, msg2)
 
-    from genchart import makechart
-    makechart(lecs, stuname)
     pdf.image(f"piecharts/chart - {stuname}.png", 0, 130)
 
     pdf.output(f"reportfolder/Attendance Report - {stuname}.pdf")
