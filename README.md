@@ -20,11 +20,7 @@ matplotlib==3.4.3
 pandas==1.3.4
 yagmail==0.14.260
 
-# Contributions
-Sushil Sunil Waghmare
 
 # Author
 Sushil Sunil Waghmare
 
-# Project Status
-Project is currently incomplete as the work is still in progress.
