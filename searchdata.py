@@ -1,4 +1,5 @@
 import pandas as pd
+import time
 
 # opening file
 file = pd.read_csv('records.csv')
@@ -32,13 +33,13 @@ def inputnmail(roll, mailch):
             age = str(age)
             lecs = str(lecs)
             if mailch == 'y' or mailch == 'Y':
-                from genreport import genpdf
 
+                from genreport import genpdf
                 genpdf(studentname, roll, dob, age, gender, residence, lecs)
+                time.sleep(2)
 
                 from mailto import sendmail
                 sendmail(emailid, studentname)
-                return '<h1>E-mail sent</h1><a href="/home">Home</a>'
 
         except Exception as val:
             print(val)
