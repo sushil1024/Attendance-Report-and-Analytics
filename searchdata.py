@@ -1,19 +1,16 @@
 import pandas as pd
-import time
-
-# opening file
-file = pd.read_csv('records.csv')
 
 
+# input function to process inputs given by the user
 def inputnmail(roll, mailch):
     if roll is not None:
         try:
             roll = int(roll)
-            with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'display.width', None):
-                temp = file.loc[[roll - 1]]  # temp variable stores value of the dataframe
 
+            # opening record.csv file
             df = pd.read_csv('records.csv')
 
+            # reading the csv file and assigning values of that roll no in csv to the current python variables
             studentname = df.iloc[roll - 1, 0]
             lecs = df.iloc[roll - 1, 8]
             emailid = df.iloc[roll - 1, 7]
@@ -25,18 +22,23 @@ def inputnmail(roll, mailch):
 
             residence = city + ", " + country
 
+            # converting integer type variables to string type in order to make a pie chart
             roll = str(roll)
             age = str(age)
             lecs = str(lecs)
+
+            # if input is 'y' or 'Y', then the user wants the email to be sent
             if mailch == 'y' or mailch == 'Y':
 
+                # making a report pdf by taking some data from above
                 from genreport import genpdf
                 genpdf(studentname, roll, dob, age, gender, residence, lecs)
-                time.sleep(2)
 
+                # sends the pdf file to the specified email id of the candidate
                 from mailto import sendmail
                 sendmail(emailid, studentname)
 
+        # exception
         except Exception as val:
             print(val)
-            return '<p>This type of value is not found in the data</p>'
+            print('This type of value is not found in the data')
