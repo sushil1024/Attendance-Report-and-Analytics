@@ -10,6 +10,7 @@ git clone https://github.com/sushil1024/Attendance-Report-and-Analytics
 ```
 
 - Installation
+
 Run "app.py"
 
 
